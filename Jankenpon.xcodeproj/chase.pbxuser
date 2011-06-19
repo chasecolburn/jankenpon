@@ -1,0 +1,106 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* Jankenpon */ = {
+		activeExec = 0;
+		executables = (
+			ABF0D70212D89E98001FE8A8 /* Jankenpon */,
+		);
+	};
+	289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1651, 811}}";
+			sepNavSelRange = "{342, 0}";
+			sepNavVisRange = "{0, 401}";
+		};
+	};
+	289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1651, 1027}}";
+			sepNavSelRange = "{643, 0}";
+			sepNavVisRange = "{0, 1437}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = ABF0D70212D89E98001FE8A8 /* Jankenpon */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* Jankenpon */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* Jankenpon */,
+		);
+		codeSenseManager = ABF0D71512D89EB3001FE8A8 /* Code sense */;
+		executables = (
+			ABF0D70212D89E98001FE8A8 /* Jankenpon */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					901,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 330218745;
+			PBXWorkspaceStateSaveDate = 330218745;
+		};
+		sourceControlManager = ABF0D71412D89EB3001FE8A8 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	ABF0D70212D89E98001FE8A8 /* Jankenpon */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Jankenpon;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	ABF0D71412D89EB3001FE8A8 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	ABF0D71512D89EB3001FE8A8 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}
