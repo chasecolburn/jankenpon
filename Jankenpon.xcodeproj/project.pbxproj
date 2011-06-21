@@ -11,12 +11,16 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754A0DD40C5E005A515E /* FlipsideView.xib */; };
-		280E754E0DD40C5E005A515E /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754B0DD40C5E005A515E /* MainView.xib */; };
-		280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754C0DD40C5E005A515E /* MainWindow.xib */; };
 		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
-		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
+		289233B00DB2D0DB0083E9F9 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* InfoViewController.m */; };
+		AB6FDBF113B0DBB100304FD3 /* ClassicGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FDBEF13B0DBB100304FD3 /* ClassicGameViewController.m */; };
+		AB6FDBF613B0DBD600304FD3 /* UltimateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FDBF413B0DBD600304FD3 /* UltimateGameViewController.m */; };
+		AB6FDBFD13B0DC3200304FD3 /* ClassicGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDBF813B0DC3200304FD3 /* ClassicGameView.xib */; };
+		AB6FDBFE13B0DC3200304FD3 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDBF913B0DC3200304FD3 /* InfoView.xib */; };
+		AB6FDBFF13B0DC3200304FD3 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDBFA13B0DC3200304FD3 /* MainView.xib */; };
+		AB6FDC0013B0DC3200304FD3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDBFB13B0DC3200304FD3 /* MainWindow.xib */; };
+		AB6FDC0113B0DC3200304FD3 /* UltimateGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDBFC13B0DC3200304FD3 /* UltimateGameView.xib */; };
 		ABF0D72112D8A6E1001FE8A8 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0D72012D8A6E1001FE8A8 /* frame.png */; };
 /* End PBXBuildFile section */
 
@@ -26,17 +30,23 @@
 		1D3623250D0F684500981E51 /* JankenponAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JankenponAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Jankenpon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jankenpon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		280E754A0DD40C5E005A515E /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
-		280E754B0DD40C5E005A515E /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
-		280E754C0DD40C5E005A515E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		288765580DF743DE002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
 		289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
-		289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipsideViewController.h; path = Classes/FlipsideViewController.h; sourceTree = "<group>"; };
-		289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipsideViewController.m; path = Classes/FlipsideViewController.m; sourceTree = "<group>"; };
+		289233AC0DB2D0DB0083E9F9 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = Classes/InfoViewController.h; sourceTree = "<group>"; };
+		289233AD0DB2D0DB0083E9F9 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoViewController.m; path = Classes/InfoViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Jankenpon_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jankenpon_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Jankenpon-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Jankenpon-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		AB6FDBEE13B0DBB100304FD3 /* ClassicGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassicGameViewController.h; path = ../../projects/Jankenpon/Classes/ClassicGameViewController.h; sourceTree = "<group>"; };
+		AB6FDBEF13B0DBB100304FD3 /* ClassicGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassicGameViewController.m; path = ../../projects/Jankenpon/Classes/ClassicGameViewController.m; sourceTree = "<group>"; };
+		AB6FDBF313B0DBD600304FD3 /* UltimateGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UltimateGameViewController.h; path = ../../projects/Jankenpon/Classes/UltimateGameViewController.h; sourceTree = "<group>"; };
+		AB6FDBF413B0DBD600304FD3 /* UltimateGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UltimateGameViewController.m; path = ../../projects/Jankenpon/Classes/UltimateGameViewController.m; sourceTree = "<group>"; };
+		AB6FDBF813B0DC3200304FD3 /* ClassicGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClassicGameView.xib; path = ../../projects/Jankenpon/Resources/ClassicGameView.xib; sourceTree = "<group>"; };
+		AB6FDBF913B0DC3200304FD3 /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoView.xib; path = ../../projects/Jankenpon/Resources/InfoView.xib; sourceTree = "<group>"; };
+		AB6FDBFA13B0DC3200304FD3 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainView.xib; path = ../../projects/Jankenpon/Resources/MainView.xib; sourceTree = "<group>"; };
+		AB6FDBFB13B0DC3200304FD3 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../../projects/Jankenpon/Resources/MainWindow.xib; sourceTree = "<group>"; };
+		AB6FDBFC13B0DC3200304FD3 /* UltimateGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UltimateGameView.xib; path = ../../projects/Jankenpon/Resources/UltimateGameView.xib; sourceTree = "<group>"; };
 		ABF0D72012D8A6E1001FE8A8 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,29 +82,33 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		281C6CD70DB2D82200F60ACC /* Flipside View */ = {
-			isa = PBXGroup;
-			children = (
-				289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */,
-				289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */,
-			);
-			name = "Flipside View";
-			sourceTree = "<group>";
-		};
-		289233A00DB2D0730083E9F9 /* Main View */ = {
+		281C6CD70DB2D82200F60ACC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				289233A80DB2D0DB0083E9F9 /* MainViewController.h */,
 				289233A90DB2D0DB0083E9F9 /* MainViewController.m */,
+				289233AC0DB2D0DB0083E9F9 /* InfoViewController.h */,
+				289233AD0DB2D0DB0083E9F9 /* InfoViewController.m */,
+				AB6FDBEE13B0DBB100304FD3 /* ClassicGameViewController.h */,
+				AB6FDBEF13B0DBB100304FD3 /* ClassicGameViewController.m */,
+				AB6FDBF313B0DBD600304FD3 /* UltimateGameViewController.h */,
+				AB6FDBF413B0DBD600304FD3 /* UltimateGameViewController.m */,
 			);
-			name = "Main View";
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		289233A00DB2D0730083E9F9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				289233A00DB2D0730083E9F9 /* Main View */,
-				281C6CD70DB2D82200F60ACC /* Flipside View */,
+				289233A00DB2D0730083E9F9 /* Utils */,
+				281C6CD70DB2D82200F60ACC /* View Controllers */,
 				080E96DDFE201D6D7F000001 /* Application Delegate */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -117,9 +131,11 @@
 			isa = PBXGroup;
 			children = (
 				ABF0D71F12D8A6E1001FE8A8 /* Images */,
-				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
-				280E754B0DD40C5E005A515E /* MainView.xib */,
-				280E754C0DD40C5E005A515E /* MainWindow.xib */,
+				AB6FDBF813B0DC3200304FD3 /* ClassicGameView.xib */,
+				AB6FDBF913B0DC3200304FD3 /* InfoView.xib */,
+				AB6FDBFA13B0DC3200304FD3 /* MainView.xib */,
+				AB6FDBFB13B0DC3200304FD3 /* MainWindow.xib */,
+				AB6FDBFC13B0DC3200304FD3 /* UltimateGameView.xib */,
 				8D1107310486CEB800E47090 /* Jankenpon-Info.plist */,
 			);
 			name = Resources;
@@ -194,10 +210,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */,
-				280E754E0DD40C5E005A515E /* MainView.xib in Resources */,
-				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
 				ABF0D72112D8A6E1001FE8A8 /* frame.png in Resources */,
+				AB6FDBFD13B0DC3200304FD3 /* ClassicGameView.xib in Resources */,
+				AB6FDBFE13B0DC3200304FD3 /* InfoView.xib in Resources */,
+				AB6FDBFF13B0DC3200304FD3 /* MainView.xib in Resources */,
+				AB6FDC0013B0DC3200304FD3 /* MainWindow.xib in Resources */,
+				AB6FDC0113B0DC3200304FD3 /* UltimateGameView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +229,9 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* JankenponAppDelegate.m in Sources */,
 				289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */,
-				289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */,
+				289233B00DB2D0DB0083E9F9 /* InfoViewController.m in Sources */,
+				AB6FDBF113B0DBB100304FD3 /* ClassicGameViewController.m in Sources */,
+				AB6FDBF613B0DBD600304FD3 /* UltimateGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

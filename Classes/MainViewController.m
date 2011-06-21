@@ -3,72 +3,72 @@
 //  Jankenpon
 //
 //  Created by Chase Colburn on 1/8/11.
-//  Copyright 2011 Cerego. All rights reserved.
+//  Copyright 2011 Clever Monkey Technologies. All rights reserved.
 //
 
 #import "MainViewController.h"
+#import "UltimateGameViewController.h"
 
 
 @implementation MainViewController
 
-@synthesize multiPlayerPanel;
+//----------------------------------------------------------------------------
+#pragma mark -
+#pragma mark Memory management
 
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-	
-	// Set border image for multi player panel
-	multiPlayerPanel.image = [[UIImage imageNamed:@"frame.png"] stretchableImageWithLeftCapWidth:12.0 topCapHeight:0.0];
-	
-	[super viewDidLoad];
-}
-
-
-- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
-    
-	[self dismissModalViewControllerAnimated:YES];
-}
-
-
-- (IBAction)showInfo:(id)sender {    
-	
-	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
-	controller.delegate = self;
-	
-	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-	[self presentModalViewController:controller animated:YES];
-	
-	[controller release];
-}
-
-
-- (void)didReceiveMemoryWarning {
+-(void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc. that aren't in use.
 }
 
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	self.multiPlayerPanel = nil;
-}
-
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
-
-- (void)dealloc {
-	[multiPlayerPanel release];
+-(void)dealloc {
     [super dealloc];
 }
 
+//----------------------------------------------------------------------------
+#pragma mark -
+#pragma mark View lifecycle
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+-(void)viewDidLoad {	
+	[super viewDidLoad];
+}
+
+-(void)viewDidUnload {
+	// Release any retained subviews of the main view.
+}
+
+//----------------------------------------------------------------------------
+#pragma mark -
+#pragma mark IBAction methods
+
+-(IBAction)startSinglePlayerClassic:(id)sender {
+    
+}
+
+-(IBAction)startSinglePlayerUltimate:(id)sender {
+    UltimateGameViewController *viewController = [[UltimateGameViewController alloc] initWithGameType:GameTypeSinglePlayer];
+	viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	[self presentModalViewController:viewController animated:YES];
+	[viewController release];
+}
+
+-(IBAction)startMultiPlayerClassic:(id)sender {
+    
+}
+
+-(IBAction)startMultiPlayerUltimate:(id)sender {
+    UltimateGameViewController *viewController = [[UltimateGameViewController alloc] initWithGameType:GameTypeMultiplePLayer];
+	viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	[self presentModalViewController:viewController animated:YES];
+	[viewController release];
+}
+
+-(IBAction)showInfo:(id)sender {    
+	InfoViewController *viewController = [[InfoViewController alloc] init];
+	viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	[self presentModalViewController:viewController animated:YES];
+	[viewController release];
+}
 
 @end

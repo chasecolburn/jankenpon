@@ -3,17 +3,19 @@
 //  Jankenpon
 //
 //  Created by Chase Colburn on 1/8/11.
-//  Copyright 2011 Cerego. All rights reserved.
+//  Copyright 2011 Clever Monkey Technologies. All rights reserved.
 //
 
-#import "FlipsideViewController.h"
+#import "InfoViewController.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
-	UIImageView *multiPlayerPanel;
+@interface MainViewController : UIViewController {
 }
 
-@property(nonatomic, retain) IBOutlet UIImageView *multiPlayerPanel;
+-(IBAction)startSinglePlayerClassic:(id)sender;
+-(IBAction)startSinglePlayerUltimate:(id)sender;
+-(IBAction)startMultiPlayerClassic:(id)sender;
+-(IBAction)startMultiPlayerUltimate:(id)sender;
 
-- (IBAction)showInfo:(id)sender;
+-(IBAction)showInfo:(id)sender;
 
 @end
