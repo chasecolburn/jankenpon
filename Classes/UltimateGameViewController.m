@@ -7,6 +7,7 @@
 //
 
 #import "UltimateGameViewController.h"
+#import "GameTokenView.h"
 
 
 @implementation UltimateGameViewController
@@ -45,6 +46,21 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    for(int col = 0; col < 3; col++) {
+        int x = 35 + (95 * col);
+        for(int row = 0; row < 4; row++) {
+            int y = 20 + (110 * row);
+            GameTokenView *tokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(x, y)];
+            [self.view addSubview:tokenView];
+            [tokenView release];
+        }
+    }
+    
 }
 
 //----------------------------------------------------------------------------
