@@ -11,4 +11,7 @@
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
+
+    #import "NSMutableArray+Extensions.h"
 #endif
+

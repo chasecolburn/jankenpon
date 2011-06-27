@@ -18,8 +18,6 @@
         UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"token_background.png"]];
         [self addSubview:backgroundView];
         [backgroundView release];
-        
-        self.backgroundColor = [UIColor redColor];
     }
     return self;
 }

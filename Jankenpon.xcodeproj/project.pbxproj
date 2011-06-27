@@ -14,6 +14,7 @@
 		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* InfoViewController.m */; };
+		AB375C9A13B8D84800CCC80F /* NSMutableArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB375C9913B8D84800CCC80F /* NSMutableArray+Extensions.m */; };
 		AB6FDBF113B0DBB100304FD3 /* ClassicGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FDBEF13B0DBB100304FD3 /* ClassicGameViewController.m */; };
 		AB6FDBF613B0DBD600304FD3 /* UltimateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FDBF413B0DBD600304FD3 /* UltimateGameViewController.m */; };
 		AB6FDBFD13B0DC3200304FD3 /* ClassicGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDBF813B0DC3200304FD3 /* ClassicGameView.xib */; };
@@ -40,6 +41,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Jankenpon_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jankenpon_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Jankenpon-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Jankenpon-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		AB375C9813B8D84800CCC80F /* NSMutableArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Extensions.h"; path = "../../projects/Jankenpon/Classes/NSMutableArray+Extensions.h"; sourceTree = "<group>"; };
+		AB375C9913B8D84800CCC80F /* NSMutableArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Extensions.m"; path = "../../projects/Jankenpon/Classes/NSMutableArray+Extensions.m"; sourceTree = "<group>"; };
 		AB6FDBEE13B0DBB100304FD3 /* ClassicGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassicGameViewController.h; path = ../../projects/Jankenpon/Classes/ClassicGameViewController.h; sourceTree = "<group>"; };
 		AB6FDBEF13B0DBB100304FD3 /* ClassicGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassicGameViewController.m; path = ../../projects/Jankenpon/Classes/ClassicGameViewController.m; sourceTree = "<group>"; };
 		AB6FDBF313B0DBD600304FD3 /* UltimateGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UltimateGameViewController.h; path = ../../projects/Jankenpon/Classes/UltimateGameViewController.h; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				AB375C9713B8D81400CCC80F /* Extensions */,
 				289233A00DB2D0730083E9F9 /* Custom Views */,
 				281C6CD70DB2D82200F60ACC /* View Controllers */,
 				080E96DDFE201D6D7F000001 /* Application Delegate */,
@@ -156,6 +160,15 @@
 				288765580DF743DE002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB375C9713B8D81400CCC80F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB375C9813B8D84800CCC80F /* NSMutableArray+Extensions.h */,
+				AB375C9913B8D84800CCC80F /* NSMutableArray+Extensions.m */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		ABF0D71F12D8A6E1001FE8A8 /* Images */ = {
@@ -242,6 +255,7 @@
 				AB6FDBF113B0DBB100304FD3 /* ClassicGameViewController.m in Sources */,
 				AB6FDBF613B0DBD600304FD3 /* UltimateGameViewController.m in Sources */,
 				AB6FDC0C13B2423E00304FD3 /* GameTokenView.m in Sources */,
+				AB375C9A13B8D84800CCC80F /* NSMutableArray+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

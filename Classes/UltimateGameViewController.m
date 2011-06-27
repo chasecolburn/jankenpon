@@ -10,6 +10,10 @@
 #import "GameTokenView.h"
 
 
+@interface UltimateGameViewController()
+-(void)flipGameTokens;
+@end
+
 @implementation UltimateGameViewController
 
 //----------------------------------------------------------------------------
@@ -56,11 +60,12 @@
         for(int row = 0; row < 4; row++) {
             int y = 20 + (110 * row);
             GameTokenView *tokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(x, y)];
+            tokenView.backgroundColor = [UIColor redColor];
             [self.view addSubview:tokenView];
             [tokenView release];
         }
     }
-    
+    [self performSelector:@selector(flipGameTokens) withObject:nil afterDelay:0.4];
 }
 
 //----------------------------------------------------------------------------
@@ -69,6 +74,27 @@
 
 -(IBAction)doneButtonWasPressed:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+//----------------------------------------------------------------------------
+#pragma mark -
+#pragma mark Private emthods
+
+-(void)flipGameTokens {
+    NSMutableArray *views = [NSMutableArray arrayWithArray:[self.view subviews]];
+    [views shuffle];
+    NSTimeInterval delay = 0.0;
+    for(UIView *tokenView in views) {
+        if([tokenView isKindOfClass:[GameTokenView class]]) {
+            [UIView beginAnimations:nil context:nil];
+            [UIView setAnimationDuration:1.0];
+            [UIView setAnimationDelay:delay];
+            [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:tokenView cache:YES];
+            [UIView commitAnimations];
+            tokenView.backgroundColor = [UIColor greenColor];
+            delay += 0.4;
+        }
+    }
 }
 
 @end
