@@ -15,6 +15,11 @@
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* InfoViewController.m */; };
 		AB375C9A13B8D84800CCC80F /* NSMutableArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB375C9913B8D84800CCC80F /* NSMutableArray+Extensions.m */; };
+		AB375CA913BF1A2900CCC80F /* token_monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = AB375CA513BF1A2900CCC80F /* token_monkey.png */; };
+		AB375CAA13BF1A2900CCC80F /* token_paper.png in Resources */ = {isa = PBXBuildFile; fileRef = AB375CA613BF1A2900CCC80F /* token_paper.png */; };
+		AB375CAB13BF1A2900CCC80F /* token_rock.png in Resources */ = {isa = PBXBuildFile; fileRef = AB375CA713BF1A2900CCC80F /* token_rock.png */; };
+		AB375CAC13BF1A2900CCC80F /* token_scissors.png in Resources */ = {isa = PBXBuildFile; fileRef = AB375CA813BF1A2900CCC80F /* token_scissors.png */; };
+		AB375CAE13BFF4F000CCC80F /* game_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AB375CAD13BFF4F000CCC80F /* game_background.png */; };
 		AB6FDBF113B0DBB100304FD3 /* ClassicGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FDBEF13B0DBB100304FD3 /* ClassicGameViewController.m */; };
 		AB6FDBF613B0DBD600304FD3 /* UltimateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FDBF413B0DBD600304FD3 /* UltimateGameViewController.m */; };
 		AB6FDBFD13B0DC3200304FD3 /* ClassicGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDBF813B0DC3200304FD3 /* ClassicGameView.xib */; };
@@ -43,6 +48,11 @@
 		8D1107310486CEB800E47090 /* Jankenpon-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Jankenpon-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		AB375C9813B8D84800CCC80F /* NSMutableArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Extensions.h"; path = "../../projects/Jankenpon/Classes/NSMutableArray+Extensions.h"; sourceTree = "<group>"; };
 		AB375C9913B8D84800CCC80F /* NSMutableArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Extensions.m"; path = "../../projects/Jankenpon/Classes/NSMutableArray+Extensions.m"; sourceTree = "<group>"; };
+		AB375CA513BF1A2900CCC80F /* token_monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = token_monkey.png; path = ../../../../projects/Jankenpon/Resources/Images/token_monkey.png; sourceTree = "<group>"; };
+		AB375CA613BF1A2900CCC80F /* token_paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = token_paper.png; path = ../../../../projects/Jankenpon/Resources/Images/token_paper.png; sourceTree = "<group>"; };
+		AB375CA713BF1A2900CCC80F /* token_rock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = token_rock.png; path = ../../../../projects/Jankenpon/Resources/Images/token_rock.png; sourceTree = "<group>"; };
+		AB375CA813BF1A2900CCC80F /* token_scissors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = token_scissors.png; path = ../../../../projects/Jankenpon/Resources/Images/token_scissors.png; sourceTree = "<group>"; };
+		AB375CAD13BFF4F000CCC80F /* game_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_background.png; path = ../../../../projects/Jankenpon/Resources/Images/game_background.png; sourceTree = "<group>"; };
 		AB6FDBEE13B0DBB100304FD3 /* ClassicGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassicGameViewController.h; path = ../../projects/Jankenpon/Classes/ClassicGameViewController.h; sourceTree = "<group>"; };
 		AB6FDBEF13B0DBB100304FD3 /* ClassicGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassicGameViewController.m; path = ../../projects/Jankenpon/Classes/ClassicGameViewController.m; sourceTree = "<group>"; };
 		AB6FDBF313B0DBD600304FD3 /* UltimateGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UltimateGameViewController.h; path = ../../projects/Jankenpon/Classes/UltimateGameViewController.h; sourceTree = "<group>"; };
@@ -174,6 +184,11 @@
 		ABF0D71F12D8A6E1001FE8A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AB375CAD13BFF4F000CCC80F /* game_background.png */,
+				AB375CA513BF1A2900CCC80F /* token_monkey.png */,
+				AB375CA613BF1A2900CCC80F /* token_paper.png */,
+				AB375CA713BF1A2900CCC80F /* token_rock.png */,
+				AB375CA813BF1A2900CCC80F /* token_scissors.png */,
 				AB6FDC0D13B2435D00304FD3 /* token_background.jpg */,
 				ABF0D72012D8A6E1001FE8A8 /* frame.png */,
 			);
@@ -238,6 +253,11 @@
 				AB6FDC0013B0DC3200304FD3 /* MainWindow.xib in Resources */,
 				AB6FDC0113B0DC3200304FD3 /* UltimateGameView.xib in Resources */,
 				AB6FDC0E13B2435D00304FD3 /* token_background.jpg in Resources */,
+				AB375CA913BF1A2900CCC80F /* token_monkey.png in Resources */,
+				AB375CAA13BF1A2900CCC80F /* token_paper.png in Resources */,
+				AB375CAB13BF1A2900CCC80F /* token_rock.png in Resources */,
+				AB375CAC13BF1A2900CCC80F /* token_scissors.png in Resources */,
+				AB375CAE13BFF4F000CCC80F /* game_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,12 +14,20 @@ typedef enum {
 } GameType;
 
 @interface UltimateGameViewController : UIViewController {
+    UIButton *fightButton;
+    UILabel *resultLabel;
 @private
     GameType gameType;
+    NSMutableArray *gameViewTokens;
+    BOOL animating;
 }
+
+@property(nonatomic, retain) IBOutlet UIButton *fightButton;
+@property(nonatomic, retain) IBOutlet UILabel *resultLabel;
 
 -(id)initWithGameType:(GameType)gameType;
 
 -(IBAction)doneButtonWasPressed:(id)sender;
+-(IBAction)fightButtonWasPressed:(id)sender;
 
 @end
