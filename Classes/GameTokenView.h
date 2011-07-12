@@ -10,8 +10,8 @@
 
 typedef enum {
     TokenRock,
-    TokenScissors,
-    TokenPaper
+    TokenPaper,
+    TokenScissors
 } Token;
 
 typedef enum {

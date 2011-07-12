@@ -197,7 +197,7 @@
 }
 //----------------------------------------------------------------------------
 #pragma mark -
-#pragma mark Animation emthods
+#pragma mark Animation methods
 
 -(void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
     if([animationID isEqualToString:@"HideGameTokens"]) {
@@ -213,7 +213,7 @@
 
 //----------------------------------------------------------------------------
 #pragma mark -
-#pragma mark Private emthods
+#pragma mark Private methods
 
 -(void)flipGameTokens {
     [gameViewTokens shuffle];

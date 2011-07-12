@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01CB7E7A13C12D950045F398 /* ClassicGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB7E7313C12D950045F398 /* ClassicGameViewController.m */; };
+		01CB7E7B13C12D950045F398 /* GameTokenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB7E7513C12D950045F398 /* GameTokenView.m */; };
+		01CB7E7C13C12D950045F398 /* NSMutableArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB7E7713C12D950045F398 /* NSMutableArray+Extensions.m */; };
+		01CB7E7D13C12D950045F398 /* UltimateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB7E7913C12D950045F398 /* UltimateGameViewController.m */; };
+		01CB7E8B13C12DD70045F398 /* ClassicGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01CB7E7E13C12DD70045F398 /* ClassicGameView.xib */; };
+		01CB7E8C13C12DD70045F398 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CB7E8013C12DD70045F398 /* frame.png */; };
+		01CB7E8D13C12DD70045F398 /* game_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CB7E8113C12DD70045F398 /* game_background.png */; };
+		01CB7E8E13C12DD70045F398 /* token_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01CB7E8213C12DD70045F398 /* token_background.jpg */; };
+		01CB7E8F13C12DD70045F398 /* token_monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CB7E8313C12DD70045F398 /* token_monkey.png */; };
+		01CB7E9013C12DD70045F398 /* token_paper.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CB7E8413C12DD70045F398 /* token_paper.png */; };
+		01CB7E9113C12DD70045F398 /* token_rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CB7E8513C12DD70045F398 /* token_rock.png */; };
+		01CB7E9213C12DD70045F398 /* token_scissors.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CB7E8613C12DD70045F398 /* token_scissors.png */; };
+		01CB7E9313C12DD70045F398 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01CB7E8713C12DD70045F398 /* InfoView.xib */; };
+		01CB7E9413C12DD70045F398 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01CB7E8813C12DD70045F398 /* MainView.xib */; };
+		01CB7E9513C12DD70045F398 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01CB7E8913C12DD70045F398 /* MainWindow.xib */; };
+		01CB7E9613C12DD70045F398 /* UltimateGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01CB7E8A13C12DD70045F398 /* UltimateGameView.xib */; };
 		1D3623260D0F684500981E51 /* JankenponAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* JankenponAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -14,29 +30,33 @@
 		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* InfoViewController.m */; };
-		AB375C9A13B8D84800CCC80F /* NSMutableArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB375C9913B8D84800CCC80F /* NSMutableArray+Extensions.m */; };
-		AB375CA913BF1A2900CCC80F /* token_monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = AB375CA513BF1A2900CCC80F /* token_monkey.png */; };
-		AB375CAA13BF1A2900CCC80F /* token_paper.png in Resources */ = {isa = PBXBuildFile; fileRef = AB375CA613BF1A2900CCC80F /* token_paper.png */; };
-		AB375CAB13BF1A2900CCC80F /* token_rock.png in Resources */ = {isa = PBXBuildFile; fileRef = AB375CA713BF1A2900CCC80F /* token_rock.png */; };
-		AB375CAC13BF1A2900CCC80F /* token_scissors.png in Resources */ = {isa = PBXBuildFile; fileRef = AB375CA813BF1A2900CCC80F /* token_scissors.png */; };
-		AB375CAE13BFF4F000CCC80F /* game_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AB375CAD13BFF4F000CCC80F /* game_background.png */; };
-		AB6FDBF113B0DBB100304FD3 /* ClassicGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FDBEF13B0DBB100304FD3 /* ClassicGameViewController.m */; };
-		AB6FDBF613B0DBD600304FD3 /* UltimateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FDBF413B0DBD600304FD3 /* UltimateGameViewController.m */; };
-		AB6FDBFD13B0DC3200304FD3 /* ClassicGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDBF813B0DC3200304FD3 /* ClassicGameView.xib */; };
-		AB6FDBFE13B0DC3200304FD3 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDBF913B0DC3200304FD3 /* InfoView.xib */; };
-		AB6FDBFF13B0DC3200304FD3 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDBFA13B0DC3200304FD3 /* MainView.xib */; };
-		AB6FDC0013B0DC3200304FD3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDBFB13B0DC3200304FD3 /* MainWindow.xib */; };
-		AB6FDC0113B0DC3200304FD3 /* UltimateGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDBFC13B0DC3200304FD3 /* UltimateGameView.xib */; };
-		AB6FDC0C13B2423E00304FD3 /* GameTokenView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FDC0B13B2423E00304FD3 /* GameTokenView.m */; };
-		AB6FDC0E13B2435D00304FD3 /* token_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB6FDC0D13B2435D00304FD3 /* token_background.jpg */; };
-		ABF0D72112D8A6E1001FE8A8 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0D72012D8A6E1001FE8A8 /* frame.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01A7B5D613CC7E1B0084E55E /* jankenpon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jankenpon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01CB7E7213C12D950045F398 /* ClassicGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassicGameViewController.h; path = Classes/ClassicGameViewController.h; sourceTree = "<group>"; };
+		01CB7E7313C12D950045F398 /* ClassicGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassicGameViewController.m; path = Classes/ClassicGameViewController.m; sourceTree = "<group>"; };
+		01CB7E7413C12D950045F398 /* GameTokenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameTokenView.h; path = Classes/GameTokenView.h; sourceTree = "<group>"; };
+		01CB7E7513C12D950045F398 /* GameTokenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameTokenView.m; path = Classes/GameTokenView.m; sourceTree = "<group>"; };
+		01CB7E7613C12D950045F398 /* NSMutableArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Extensions.h"; path = "Classes/NSMutableArray+Extensions.h"; sourceTree = "<group>"; };
+		01CB7E7713C12D950045F398 /* NSMutableArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Extensions.m"; path = "Classes/NSMutableArray+Extensions.m"; sourceTree = "<group>"; };
+		01CB7E7813C12D950045F398 /* UltimateGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UltimateGameViewController.h; path = Classes/UltimateGameViewController.h; sourceTree = "<group>"; };
+		01CB7E7913C12D950045F398 /* UltimateGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UltimateGameViewController.m; path = Classes/UltimateGameViewController.m; sourceTree = "<group>"; };
+		01CB7E7E13C12DD70045F398 /* ClassicGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClassicGameView.xib; path = Resources/ClassicGameView.xib; sourceTree = "<group>"; };
+		01CB7E8013C12DD70045F398 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
+		01CB7E8113C12DD70045F398 /* game_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_background.png; sourceTree = "<group>"; };
+		01CB7E8213C12DD70045F398 /* token_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = token_background.jpg; sourceTree = "<group>"; };
+		01CB7E8313C12DD70045F398 /* token_monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = token_monkey.png; sourceTree = "<group>"; };
+		01CB7E8413C12DD70045F398 /* token_paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = token_paper.png; sourceTree = "<group>"; };
+		01CB7E8513C12DD70045F398 /* token_rock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = token_rock.png; sourceTree = "<group>"; };
+		01CB7E8613C12DD70045F398 /* token_scissors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = token_scissors.png; sourceTree = "<group>"; };
+		01CB7E8713C12DD70045F398 /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoView.xib; path = Resources/InfoView.xib; sourceTree = "<group>"; };
+		01CB7E8813C12DD70045F398 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainView.xib; path = Resources/MainView.xib; sourceTree = "<group>"; };
+		01CB7E8913C12DD70045F398 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = Resources/MainWindow.xib; sourceTree = "<group>"; };
+		01CB7E8A13C12DD70045F398 /* UltimateGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UltimateGameView.xib; path = Resources/UltimateGameView.xib; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* JankenponAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JankenponAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* JankenponAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JankenponAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* jankenpon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jankenpon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765580DF743DE002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
@@ -46,26 +66,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Jankenpon_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jankenpon_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Jankenpon-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Jankenpon-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		AB375C9813B8D84800CCC80F /* NSMutableArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Extensions.h"; path = "../../projects/Jankenpon/Classes/NSMutableArray+Extensions.h"; sourceTree = "<group>"; };
-		AB375C9913B8D84800CCC80F /* NSMutableArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Extensions.m"; path = "../../projects/Jankenpon/Classes/NSMutableArray+Extensions.m"; sourceTree = "<group>"; };
-		AB375CA513BF1A2900CCC80F /* token_monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = token_monkey.png; path = ../../../../projects/Jankenpon/Resources/Images/token_monkey.png; sourceTree = "<group>"; };
-		AB375CA613BF1A2900CCC80F /* token_paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = token_paper.png; path = ../../../../projects/Jankenpon/Resources/Images/token_paper.png; sourceTree = "<group>"; };
-		AB375CA713BF1A2900CCC80F /* token_rock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = token_rock.png; path = ../../../../projects/Jankenpon/Resources/Images/token_rock.png; sourceTree = "<group>"; };
-		AB375CA813BF1A2900CCC80F /* token_scissors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = token_scissors.png; path = ../../../../projects/Jankenpon/Resources/Images/token_scissors.png; sourceTree = "<group>"; };
-		AB375CAD13BFF4F000CCC80F /* game_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_background.png; path = ../../../../projects/Jankenpon/Resources/Images/game_background.png; sourceTree = "<group>"; };
-		AB6FDBEE13B0DBB100304FD3 /* ClassicGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassicGameViewController.h; path = ../../projects/Jankenpon/Classes/ClassicGameViewController.h; sourceTree = "<group>"; };
-		AB6FDBEF13B0DBB100304FD3 /* ClassicGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassicGameViewController.m; path = ../../projects/Jankenpon/Classes/ClassicGameViewController.m; sourceTree = "<group>"; };
-		AB6FDBF313B0DBD600304FD3 /* UltimateGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UltimateGameViewController.h; path = ../../projects/Jankenpon/Classes/UltimateGameViewController.h; sourceTree = "<group>"; };
-		AB6FDBF413B0DBD600304FD3 /* UltimateGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UltimateGameViewController.m; path = ../../projects/Jankenpon/Classes/UltimateGameViewController.m; sourceTree = "<group>"; };
-		AB6FDBF813B0DC3200304FD3 /* ClassicGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClassicGameView.xib; path = ../../projects/Jankenpon/Resources/ClassicGameView.xib; sourceTree = "<group>"; };
-		AB6FDBF913B0DC3200304FD3 /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoView.xib; path = ../../projects/Jankenpon/Resources/InfoView.xib; sourceTree = "<group>"; };
-		AB6FDBFA13B0DC3200304FD3 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainView.xib; path = ../../projects/Jankenpon/Resources/MainView.xib; sourceTree = "<group>"; };
-		AB6FDBFB13B0DC3200304FD3 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../../projects/Jankenpon/Resources/MainWindow.xib; sourceTree = "<group>"; };
-		AB6FDBFC13B0DC3200304FD3 /* UltimateGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UltimateGameView.xib; path = ../../projects/Jankenpon/Resources/UltimateGameView.xib; sourceTree = "<group>"; };
-		AB6FDC0A13B2423E00304FD3 /* GameTokenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameTokenView.h; path = ../../projects/Jankenpon/Classes/GameTokenView.h; sourceTree = "<group>"; };
-		AB6FDC0B13B2423E00304FD3 /* GameTokenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameTokenView.m; path = ../../projects/Jankenpon/Classes/GameTokenView.m; sourceTree = "<group>"; };
-		AB6FDC0D13B2435D00304FD3 /* token_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = token_background.jpg; path = ../../../../projects/Jankenpon/Resources/Images/token_background.jpg; sourceTree = "<group>"; };
-		ABF0D72012D8A6E1001FE8A8 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +82,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01CB7E7F13C12DD70045F398 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				01CB7E8013C12DD70045F398 /* frame.png */,
+				01CB7E8113C12DD70045F398 /* game_background.png */,
+				01CB7E8213C12DD70045F398 /* token_background.jpg */,
+				01CB7E8313C12DD70045F398 /* token_monkey.png */,
+				01CB7E8413C12DD70045F398 /* token_paper.png */,
+				01CB7E8513C12DD70045F398 /* token_rock.png */,
+				01CB7E8613C12DD70045F398 /* token_scissors.png */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Application Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +110,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* jankenpon.app */,
+				01A7B5D613CC7E1B0084E55E /* jankenpon.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,12 +120,12 @@
 			children = (
 				289233A80DB2D0DB0083E9F9 /* MainViewController.h */,
 				289233A90DB2D0DB0083E9F9 /* MainViewController.m */,
+				01CB7E7213C12D950045F398 /* ClassicGameViewController.h */,
+				01CB7E7313C12D950045F398 /* ClassicGameViewController.m */,
+				01CB7E7813C12D950045F398 /* UltimateGameViewController.h */,
+				01CB7E7913C12D950045F398 /* UltimateGameViewController.m */,
 				289233AC0DB2D0DB0083E9F9 /* InfoViewController.h */,
 				289233AD0DB2D0DB0083E9F9 /* InfoViewController.m */,
-				AB6FDBEE13B0DBB100304FD3 /* ClassicGameViewController.h */,
-				AB6FDBEF13B0DBB100304FD3 /* ClassicGameViewController.m */,
-				AB6FDBF313B0DBD600304FD3 /* UltimateGameViewController.h */,
-				AB6FDBF413B0DBD600304FD3 /* UltimateGameViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -118,8 +133,8 @@
 		289233A00DB2D0730083E9F9 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				AB6FDC0A13B2423E00304FD3 /* GameTokenView.h */,
-				AB6FDC0B13B2423E00304FD3 /* GameTokenView.m */,
+				01CB7E7413C12D950045F398 /* GameTokenView.h */,
+				01CB7E7513C12D950045F398 /* GameTokenView.m */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -151,12 +166,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				ABF0D71F12D8A6E1001FE8A8 /* Images */,
-				AB6FDBF813B0DC3200304FD3 /* ClassicGameView.xib */,
-				AB6FDBF913B0DC3200304FD3 /* InfoView.xib */,
-				AB6FDBFA13B0DC3200304FD3 /* MainView.xib */,
-				AB6FDBFB13B0DC3200304FD3 /* MainWindow.xib */,
-				AB6FDBFC13B0DC3200304FD3 /* UltimateGameView.xib */,
+				01CB7E7E13C12DD70045F398 /* ClassicGameView.xib */,
+				01CB7E8713C12DD70045F398 /* InfoView.xib */,
+				01CB7E8A13C12DD70045F398 /* UltimateGameView.xib */,
+				01CB7E8813C12DD70045F398 /* MainView.xib */,
+				01CB7E8913C12DD70045F398 /* MainWindow.xib */,
+				01CB7E7F13C12DD70045F398 /* Images */,
 				8D1107310486CEB800E47090 /* Jankenpon-Info.plist */,
 			);
 			name = Resources;
@@ -175,25 +190,10 @@
 		AB375C9713B8D81400CCC80F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AB375C9813B8D84800CCC80F /* NSMutableArray+Extensions.h */,
-				AB375C9913B8D84800CCC80F /* NSMutableArray+Extensions.m */,
+				01CB7E7613C12D950045F398 /* NSMutableArray+Extensions.h */,
+				01CB7E7713C12D950045F398 /* NSMutableArray+Extensions.m */,
 			);
 			name = Extensions;
-			sourceTree = "<group>";
-		};
-		ABF0D71F12D8A6E1001FE8A8 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				AB375CAD13BFF4F000CCC80F /* game_background.png */,
-				AB375CA513BF1A2900CCC80F /* token_monkey.png */,
-				AB375CA613BF1A2900CCC80F /* token_paper.png */,
-				AB375CA713BF1A2900CCC80F /* token_rock.png */,
-				AB375CA813BF1A2900CCC80F /* token_scissors.png */,
-				AB6FDC0D13B2435D00304FD3 /* token_background.jpg */,
-				ABF0D72012D8A6E1001FE8A8 /* frame.png */,
-			);
-			name = Images;
-			path = Resources/Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +213,7 @@
 			);
 			name = Jankenpon;
 			productName = Jankenpon;
-			productReference = 1D6058910D05DD3D006BFB54 /* jankenpon.app */;
+			productReference = 01A7B5D613CC7E1B0084E55E /* jankenpon.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -246,18 +246,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABF0D72112D8A6E1001FE8A8 /* frame.png in Resources */,
-				AB6FDBFD13B0DC3200304FD3 /* ClassicGameView.xib in Resources */,
-				AB6FDBFE13B0DC3200304FD3 /* InfoView.xib in Resources */,
-				AB6FDBFF13B0DC3200304FD3 /* MainView.xib in Resources */,
-				AB6FDC0013B0DC3200304FD3 /* MainWindow.xib in Resources */,
-				AB6FDC0113B0DC3200304FD3 /* UltimateGameView.xib in Resources */,
-				AB6FDC0E13B2435D00304FD3 /* token_background.jpg in Resources */,
-				AB375CA913BF1A2900CCC80F /* token_monkey.png in Resources */,
-				AB375CAA13BF1A2900CCC80F /* token_paper.png in Resources */,
-				AB375CAB13BF1A2900CCC80F /* token_rock.png in Resources */,
-				AB375CAC13BF1A2900CCC80F /* token_scissors.png in Resources */,
-				AB375CAE13BFF4F000CCC80F /* game_background.png in Resources */,
+				01CB7E8B13C12DD70045F398 /* ClassicGameView.xib in Resources */,
+				01CB7E8C13C12DD70045F398 /* frame.png in Resources */,
+				01CB7E8D13C12DD70045F398 /* game_background.png in Resources */,
+				01CB7E8E13C12DD70045F398 /* token_background.jpg in Resources */,
+				01CB7E8F13C12DD70045F398 /* token_monkey.png in Resources */,
+				01CB7E9013C12DD70045F398 /* token_paper.png in Resources */,
+				01CB7E9113C12DD70045F398 /* token_rock.png in Resources */,
+				01CB7E9213C12DD70045F398 /* token_scissors.png in Resources */,
+				01CB7E9313C12DD70045F398 /* InfoView.xib in Resources */,
+				01CB7E9413C12DD70045F398 /* MainView.xib in Resources */,
+				01CB7E9513C12DD70045F398 /* MainWindow.xib in Resources */,
+				01CB7E9613C12DD70045F398 /* UltimateGameView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,10 +272,10 @@
 				1D3623260D0F684500981E51 /* JankenponAppDelegate.m in Sources */,
 				289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */,
 				289233B00DB2D0DB0083E9F9 /* InfoViewController.m in Sources */,
-				AB6FDBF113B0DBB100304FD3 /* ClassicGameViewController.m in Sources */,
-				AB6FDBF613B0DBD600304FD3 /* UltimateGameViewController.m in Sources */,
-				AB6FDC0C13B2423E00304FD3 /* GameTokenView.m in Sources */,
-				AB375C9A13B8D84800CCC80F /* NSMutableArray+Extensions.m in Sources */,
+				01CB7E7A13C12D950045F398 /* ClassicGameViewController.m in Sources */,
+				01CB7E7B13C12D950045F398 /* GameTokenView.m in Sources */,
+				01CB7E7C13C12D950045F398 /* NSMutableArray+Extensions.m in Sources */,
+				01CB7E7D13C12D950045F398 /* UltimateGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

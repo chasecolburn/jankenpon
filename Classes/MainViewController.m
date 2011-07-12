@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "UltimateGameViewController.h"
+#import "ClassicGameViewController.h"
 
 
 @implementation MainViewController
@@ -43,7 +44,10 @@
 #pragma mark IBAction methods
 
 -(IBAction)startSinglePlayerClassic:(id)sender {
-    
+    ClassicGameViewController *viewController = [[ClassicGameViewController alloc] initWithGameType:GameTypeSinglePlayer];
+    viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:viewController animated:YES];
+    [viewController release];
 }
 
 -(IBAction)startSinglePlayerUltimate:(id)sender {
@@ -58,7 +62,7 @@
 }
 
 -(IBAction)startMultiPlayerUltimate:(id)sender {
-    UltimateGameViewController *viewController = [[UltimateGameViewController alloc] initWithGameType:GameTypeMultiplePLayer];
+    UltimateGameViewController *viewController = [[UltimateGameViewController alloc] initWithGameType:GameTypeMultiplePlayer];
 	viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:viewController animated:YES];
 	[viewController release];

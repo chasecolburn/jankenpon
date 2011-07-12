@@ -8,6 +8,11 @@
 
 #import "InfoViewController.h"
 
+typedef enum {
+    GameTypeSinglePlayer,
+    GameTypeMultiplePlayer
+} GameType;
+
 @interface MainViewController : UIViewController {
 }
 

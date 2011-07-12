@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef enum {
-    GameTypeSinglePlayer,
-    GameTypeMultiplePlayer
-} GameType;
+#import "MainViewController.h"
 
 @interface UltimateGameViewController : UIViewController {
     UIButton *fightButton;
