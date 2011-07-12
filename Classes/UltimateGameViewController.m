@@ -63,6 +63,9 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    
+    self.fightButton = nil;
+    self.resultLabel = nil;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -168,7 +171,6 @@
 
 -(void)hideResult {
     [UIView beginAnimations:@"HideResult" context:nil];
-    [UIView setAnimationDuration:0.4];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
