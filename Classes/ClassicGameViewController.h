@@ -18,6 +18,7 @@
     GameType gameType;
     NSMutableArray *gameViewTokens;
     GameTokenView *opponentTokenView;
+    int countdown;
     BOOL animating;
 }
 
