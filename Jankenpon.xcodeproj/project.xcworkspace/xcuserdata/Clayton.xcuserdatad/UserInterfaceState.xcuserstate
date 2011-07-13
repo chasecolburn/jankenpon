@@ -8380,9 +8380,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>332268090.00743198</real>
-		<string>{4023, 1462}</string>
-		<string>{4500, 0}</string>
+		<real>332269093.47964698</real>
+		<string>{3842, 1451}</string>
+		<string>{4586, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -11278,7 +11278,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>885</integer>
+					<integer>369</integer>
 				</dict>
 			</array>
 		</dict>
@@ -11532,7 +11532,7 @@
 				<integer>901</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>332268053.93647999</real>
+			<real>332269065.39222902</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -11543,7 +11543,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 12:40 PM</string>
+		<string>Today at 12:57 PM</string>
 		<integer>106</integer>
 		<dict>
 			<key>$class</key>
@@ -15666,9 +15666,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>332268090.00875598</real>
-		<string>{4023, 1462}</string>
-		<string>{4500, 0}</string>
+		<real>332269093.48047799</real>
+		<string>{3842, 1451}</string>
+		<string>{4586, 0}</string>
 		<string>-animateLabel</string>
 		<string>ClassicGameViewController.m</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>

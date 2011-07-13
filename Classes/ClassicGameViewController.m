@@ -152,16 +152,20 @@
     [UIView animateWithDuration:0.4 delay:delay options:0 animations:^{
         self.infoLabel.alpha = 0.0;
     }completion:^(BOOL finished) {
-        [self animateLabel];
+        if(self.infoLabel.text != @"FIGHT!") {
+            [self animateLabel];
+        }
     }];
 }
 
 -(void)animateLabel {
-    if (countdown == 0) {
+    if(countdown == 0) {
         self.infoLabel.text = @"FIGHT!";
     } else {
-        self.infoLabel.text = (NSString *)countdown;
+        self.infoLabel.text = [NSString stringWithFormat:@"%d", countdown--];
     }
+    
+    self.infoLabel.transform = CGAffineTransformMakeScale(0.01, 0.01);
     
     [self showInfoLabel:0.0];
     
@@ -172,11 +176,9 @@
     [UIView setAnimationDelay:0.4];
     
     [self.view bringSubviewToFront:infoLabel];
-    [UIView commitAnimations]; 
+    [UIView commitAnimations];
 
     [self hideInfoLabel:0.4];
-    
-    countdown--;
 }
 
 -(void)fightButtonWasPressed:(id)sender {
