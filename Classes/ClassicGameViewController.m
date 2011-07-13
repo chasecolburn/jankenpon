@@ -14,8 +14,6 @@
 -(void)beginCountdown;
 -(void)battleTokens;
 -(void)tokenWasSelected:(id)sender;
-//-(GameTokenView*)selectedTokenForPlayer:(Player)player;
-//-(NSString*)resultMessage:(Result)result;
 @end
 
 @implementation ClassicGameViewController
@@ -123,6 +121,7 @@
     
     NSTimeInterval delay = 0.0;
     
+    // Display tokens
     opponentTokenView.transform = CGAffineTransformMakeScale(2.0, 2.0);
     
     for(GameTokenView *tokenView in gameViewTokens) {
@@ -255,6 +254,7 @@
 #pragma mark Input Events
 
 -(void)nextRoundButtonWasPressed:(id)sender {
+    // Reset game for next round
     [self hideButtonWithDelay:nextRoundButton andDelay:0.0];
     [self hideButtonWithDelay:doneButton andDelay:0.0];
     
