@@ -11,23 +11,34 @@
 #import "GameTokenView.h"
 
 @interface ClassicGameViewController : UIViewController {
-    UIButton *fightButton;
+    UIButton *nextRoundButton;
+    UIButton *doneButton;
     UILabel *weaponLabel;
     UILabel *infoLabel;
+    UILabel *playerLabel;
+    UILabel *computerLabel;
 @private
     GameType gameType;
     NSMutableArray *gameViewTokens;
+    GameTokenView *playerTokenView;
     GameTokenView *opponentTokenView;
     int countdown;
-    BOOL animating;
+    int playerScore;
+    int computerScore;
+    Result result;
+    BOOL tokenSelected;
 }
 
-@property(nonatomic, retain) IBOutlet UIButton *fightButton;
+@property(nonatomic, retain) IBOutlet UIButton *nextRoundButton;
+@property(nonatomic, retain) IBOutlet UIButton *doneButton;
 @property(nonatomic, retain) IBOutlet UILabel *weaponLabel;
 @property(nonatomic, retain) IBOutlet UILabel *infoLabel;
+@property(nonatomic, retain) IBOutlet UILabel *playerLabel;
+@property(nonatomic, retain) IBOutlet UILabel *computerLabel;
 
 -(id)initWithGameType:(GameType)gameType;
 
--(IBAction)fightButtonWasPressed:(id)sender;
+-(IBAction)nextRoundButtonWasPressed:(id)sender;
+-(IBAction)doneButtonWasPressed:(id)sender;
 
 @end
