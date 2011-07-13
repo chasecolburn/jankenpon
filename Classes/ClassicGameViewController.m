@@ -9,7 +9,7 @@
 #import "ClassicGameViewController.h"
 
 @interface ClassicGameViewController()
-//-(void)flipGameTokens;
+-(void)animateLabel;
 -(void)tokenWasSelected:(id)sender;
 //-(GameTokenView*)selectedTokenForPlayer:(Player)player;
 //-(NSString*)resultMessage:(Result)result;
@@ -31,6 +31,7 @@
         gameType = aGameType;
         gameViewTokens = [[NSMutableArray alloc] init];
         opponentTokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(120, 80)];
+        countdown = 3;
     }
     return self;
 }
@@ -45,6 +46,7 @@
     [weaponLabel release];
     [infoLabel release];
     [gameViewTokens release];
+    [opponentTokenView release];
     [super dealloc];
 }
 
@@ -146,12 +148,35 @@
     [UIView commitAnimations];
 }
 
--(void)hideInfoLabel:(CGFloat)delay {
+-(void)hideInfoLabel:(CGFloat)delay {    
+    [UIView animateWithDuration:0.4 delay:delay options:0 animations:^{
+        self.infoLabel.alpha = 0.0;
+    }completion:^(BOOL finished) {
+        [self animateLabel];
+    }];
+}
+
+-(void)animateLabel {
+    if (countdown == 0) {
+        self.infoLabel.text = @"FIGHT!";
+    } else {
+        self.infoLabel.text = (NSString *)countdown;
+    }
+    
+    [self showInfoLabel:0.0];
+    
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.4];
-    [UIView setAnimationDelay:delay];
-    self.infoLabel.alpha = 0.0;
-    [UIView commitAnimations];
+    self.infoLabel.transform = CGAffineTransformMakeScale(6.0, 6.0);
+
+    [UIView setAnimationDelay:0.4];
+    
+    [self.view bringSubviewToFront:infoLabel];
+    [UIView commitAnimations]; 
+
+    [self hideInfoLabel:0.4];
+    
+    countdown--;
 }
 
 -(void)fightButtonWasPressed:(id)sender {
@@ -159,45 +184,36 @@
     
     self.infoLabel.textAlignment = UITextAlignmentCenter;
     
-    //for(int i = 3; i > 0; i--) {
-        //self.infoLabel.text = (NSString *)i;
-        self.infoLabel.text = @"3";
-        [self showInfoLabel:0.0];
     
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDuration:0.4];
-        //[UIView setAnimationDelay:((3 - i) * 0.4)];
-        [UIView setAnimationDelay:0.4];
-        self.infoLabel.transform = CGAffineTransformMakeScale(6.0, 6.0);
-        [self.view bringSubviewToFront:infoLabel];
-        
-        [UIView commitAnimations]; 
+    [self animateLabel];
     
-        //[self hideInfoLabel:((3 - i) * 0.4)];
-        [self hideInfoLabel:0.4];
+    
+//        [self showInfoLabel:0.0];
+//    
+//        [UIView beginAnimations:nil context:nil];
+//        [UIView animateWithDuration:0.4 animations:^{
+//            self.infoLabel.transform = CGAffineTransformMakeScale(6.0, 6.0);
+//        }completion:^(BOOL finished) {
+//            
+//        }];
+//        //[UIView setAnimationDelay:((3 - i) * 0.4)];
+//        [UIView setAnimationDelay:0.4];
+//        
+//        [self.view bringSubviewToFront:infoLabel];
+//        [UIView commitAnimations]; 
+//    
+//        //[self hideInfoLabel:((3 - i) * 0.4)];
+//        [self hideInfoLabel:0.4];
 
     
-    /*
-        self.infoLabel.text = @"2";
-        [self showInfoLabel:0.8];
-        
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDuration:0.4];
-    
-        [UIView setAnimationDelay:1.2];
-        self.infoLabel.transform = CGAffineTransformMakeScale(6.0, 6.0);
-        [UIView commitAnimations]; 
-    
-        [self hideInfoLabel:1.2];
-     */
-    //}
+
 }
 
 -(void)tokenWasSelected:(id)sender {
     if(animating) return;
     
     if([sender isKindOfClass:[GameTokenView class]]) {
-        animating = true;
+        animating = YES;
         
         GameTokenView *selectedTokenView = (GameTokenView*)sender;
         
@@ -220,7 +236,7 @@
         [UIView setAnimationDuration:0.4];
         [UIView setAnimationDelay:1.0];
         selectedTokenView.transform = CGAffineTransformMakeScale(2.0, 2.0);
-        [UIView commitAnimations]; 
+        [UIView commitAnimations];
         
         [self hideWeaponLabel];
         [self showFightButton:1.4];
