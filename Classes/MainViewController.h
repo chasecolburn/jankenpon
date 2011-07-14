@@ -10,7 +10,7 @@
 
 typedef enum {
     GameTypeSinglePlayer,
-    GameTypeMultiplePlayer
+    GameTypeMultiPlayer
 } GameType;
 
 @interface MainViewController : UIViewController {

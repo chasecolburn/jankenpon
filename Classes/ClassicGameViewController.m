@@ -33,9 +33,16 @@
     self = [super initWithNibName:@"ClassicGameView" bundle:nil];
     if(self) {
         gameType = aGameType;
-        gameViewTokens = [[NSMutableArray alloc] init];
-        opponentTokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(120, 90)];
-        [self initGame];
+        
+        if(gameType == GameTypeSinglePlayer) {
+            gameViewTokens = [[NSMutableArray alloc] init];
+            opponentTokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(120, 90)];
+            [self initGame];
+        }else {
+            gameViewTokens = [[NSMutableArray alloc] init];
+            opponentTokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(120, 90)];
+            [self initGame]; 
+        }
     }
     return self;
 }
@@ -200,11 +207,11 @@
         switch (result) {
             case ResultWin:
                 self.infoLabel.text = @"You Win!";
-                labelScale = 0.8;
+                labelScale = 0.9;
                 break;
             case ResultLose:
                 self.infoLabel.text = @"You Lose!";
-                labelScale = 0.8;
+                labelScale = 0.9;
                 break;
             case ResultDraw:
                 self.infoLabel.text = @"Draw!";
@@ -214,7 +221,7 @@
         animateDelay = 0.8;
     }else if (countdown == 0) {
         self.infoLabel.text = @"Fight!";
-        labelScale = 1.2;
+        labelScale = 1.0;
         animateDelay = 0.8;
     }else {
         self.infoLabel.text = [NSString stringWithFormat:@"%d", countdown--];

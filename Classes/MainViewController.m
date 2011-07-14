@@ -58,11 +58,14 @@
 }
 
 -(IBAction)startMultiPlayerClassic:(id)sender {
-    
+    ClassicGameViewController *viewController = [[ClassicGameViewController alloc] initWithGameType:GameTypeMultiPlayer];
+    viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:viewController animated:YES];
+    [viewController release];
 }
 
 -(IBAction)startMultiPlayerUltimate:(id)sender {
-    UltimateGameViewController *viewController = [[UltimateGameViewController alloc] initWithGameType:GameTypeMultiplePlayer];
+    UltimateGameViewController *viewController = [[UltimateGameViewController alloc] initWithGameType:GameTypeMultiPlayer];
 	viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:viewController animated:YES];
 	[viewController release];
