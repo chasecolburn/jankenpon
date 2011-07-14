@@ -164,7 +164,7 @@
 
 -(void)hideLabelWithDelay:(UILabel*)label andDelay:(CGFloat)delay {
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.2];
+    [UIView setAnimationDuration:0.1];
     [UIView setAnimationDelay:delay];
     label.alpha = 0.0;
     [UIView commitAnimations];
@@ -173,7 +173,7 @@
 -(void)hideInfoLabelWithDelay:(CGFloat)delay {    
     // Once the Info Label is hidden, call the animateLabel function again with the countdown
     // integer decremented by 1. If the Info Label text is 'FIGHT!', do not call animation again
-    [UIView animateWithDuration:0.4 delay:delay options:0 animations:^{
+    [UIView animateWithDuration:0.2 delay:delay options:0 animations:^{
         self.infoLabel.alpha = 0.0;
     }completion:^(BOOL finished) {
         if(self.infoLabel.text != @"FIGHT!") {
@@ -182,6 +182,12 @@
             [self battleTokens];
         }
     }];
+    
+    if(self.infoLabel.text == @"FIGHT!") {
+        // Flip over tokens
+        [playerTokenView flipToken:0.0];
+        [opponentTokenView flipToken:0.0];  
+    }
 }
 
 -(void)animateLabel {
@@ -212,8 +218,8 @@
         animateDelay = 0.6;
     }else {
         self.infoLabel.text = [NSString stringWithFormat:@"%d", countdown--];
-        labelScale = 6.0;
-        animateDelay = 0.4;
+        labelScale = 5.0;
+        animateDelay = 0.3;
     }
     
     // Strink the text
@@ -223,7 +229,7 @@
     [self showLabelWithDelay:infoLabel andDelay:0.0];
     
     // Increase the size of the label
-    [UIView animateWithDuration:0.4 delay:0.2 options:0 animations:^{
+    [UIView animateWithDuration:0.4 delay:0.1 options:0 animations:^{
         self.infoLabel.transform = CGAffineTransformMakeScale(labelScale, labelScale);
     }completion:^(BOOL finished) {
         // If the comparison has been completed and result is set, show the next round and done
@@ -263,10 +269,13 @@
     
     [UIView animateWithDuration:0.4 animations:^{
         playerTokenView.alpha = 0.0;
+        playerTokenView.transform = CGAffineTransformMakeScale(0.01, 0.01);
     }];
     
     [self hideLabelWithDelay:infoLabel andDelay:0.0];
     [self showLabelWithDelay:weaponLabel andDelay:0.0];
+
+    [gameViewTokens removeAllObjects];
     
     [self initGame];
     [self viewWillAppear:YES];
@@ -285,12 +294,12 @@
     
     if([sender isKindOfClass:[GameTokenView class]]) {
         // Get selected token
-        GameTokenView *selectedTokenView = (GameTokenView*)sender;
+        playerTokenView = (GameTokenView*)sender;
         
         // Hide non selected tokens and remove them from the array
         for(GameTokenView *tokenView in gameViewTokens) {
             // Skip over selected token
-            if(tokenView.token == selectedTokenView.token) continue;
+            if(tokenView.token == playerTokenView.token) continue;
             
             // Once token is hidden, remove it from the array
             [UIView animateWithDuration:0.4 animations:^{
@@ -301,13 +310,13 @@
         }
         
         // Flip over token and move selected to the center
-        [selectedTokenView flipToken:0.0];
+        [playerTokenView flipToken:0.0];
         
-        [selectedTokenView setCenter:CGPointMake(160.0, 340.0) withDelay:0.6];
+        [playerTokenView setCenter:CGPointMake(160.0, 340.0) withDelay:0.6];
         
         // Once player token is in place, begin countdown
-        [UIView animateWithDuration:0.4 delay:1.0 options:0 animations:^{
-            selectedTokenView.transform = CGAffineTransformMakeScale(2.0, 2.0);
+        [UIView animateWithDuration:0.3 delay:0.7 options:0 animations:^{
+            playerTokenView.transform = CGAffineTransformMakeScale(2.0, 2.0);
         }completion:^(BOOL finished) {
             [self beginCountdown];
         }];
@@ -325,14 +334,7 @@
     [self animateLabel];
 }
 
--(void)battleTokens {
-    // Get remaining player token from the array
-    playerTokenView = [gameViewTokens objectAtIndex:0];
-    
-    // Flip over tokens
-    [playerTokenView flipToken:0.0];
-    [opponentTokenView flipToken:0.0];  
-    
+-(void)battleTokens {    
     // Determine who wins
     result = [playerTokenView compare:opponentTokenView];
     
