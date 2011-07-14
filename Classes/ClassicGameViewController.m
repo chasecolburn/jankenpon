@@ -34,7 +34,7 @@
     if(self) {
         gameType = aGameType;
         gameViewTokens = [[NSMutableArray alloc] init];
-        opponentTokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(120, 80)];
+        opponentTokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(120, 90)];
         [self initGame];
     }
     return self;
@@ -96,7 +96,7 @@
     // Create the 3 tokens(rock, paper, scissors) for the user to select from
     for(int col = 0; col < 3; col++) {
         int x = 20 + (100 * col);
-        int y = 350;
+        int y = 360;
         
         Token token = col;
         GameTokenView *tokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(x, y)];
@@ -164,7 +164,7 @@
 
 -(void)hideLabel:(UILabel*)label withDelay:(CGFloat)delay {
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.1];
+    [UIView setAnimationDuration:0.2];
     [UIView setAnimationDelay:delay];
     label.alpha = 0.0;
     [UIView commitAnimations];
@@ -176,14 +176,14 @@
     [UIView animateWithDuration:0.2 delay:delay options:0 animations:^{
         self.infoLabel.alpha = 0.0;
     }completion:^(BOOL finished) {
-        if(![self.infoLabel.text isEqualToString:@"FIGHT!"]) {
+        if(![self.infoLabel.text isEqualToString:@"Fight!"]) {
             [self animateLabel];
         }else {
             [self compareTokens];
         }
     }];
     
-    if([self.infoLabel.text isEqualToString:@"FIGHT!"]) {
+    if([self.infoLabel.text isEqualToString:@"Fight!"]) {
         // Flip over tokens
         //[playerTokenView flipToken:0.0];
         [opponentTokenView flipToken:0.0];
@@ -200,25 +200,25 @@
         switch (result) {
             case ResultWin:
                 self.infoLabel.text = @"You Win!";
-                labelScale = 1.5;
+                labelScale = 0.8;
                 break;
             case ResultLose:
                 self.infoLabel.text = @"You Lose!";
-                labelScale = 1.5;
+                labelScale = 0.8;
                 break;
             case ResultDraw:
                 self.infoLabel.text = @"Draw!";
-                labelScale = 2.0;
+                labelScale = 1.0;
                 break;
         }
         animateDelay = 0.8;
     }else if (countdown == 0) {
-        self.infoLabel.text = @"FIGHT!";
-        labelScale = 2.5;
-        animateDelay = 0.6;
+        self.infoLabel.text = @"Fight!";
+        labelScale = 1.2;
+        animateDelay = 0.8;
     }else {
         self.infoLabel.text = [NSString stringWithFormat:@"%d", countdown--];
-        labelScale = 5.0;
+        labelScale = 2.5;
         animateDelay = 0.3;
     }
     
@@ -272,6 +272,7 @@
         playerTokenView.transform = CGAffineTransformMakeScale(0.01, 0.01);
     }];
     
+    [self.view bringSubviewToFront:infoLabel];
     [self hideLabel:infoLabel withDelay:0.0];
     [self showLabel:weaponLabel withDelay:0.0];
 
@@ -312,7 +313,7 @@
         // Flip over token and move selected to the center
         //[playerTokenView flipToken:0.0];
         
-        [playerTokenView setCenter:CGPointMake(160.0, 340.0) withDelay:0.0];
+        [playerTokenView setCenter:CGPointMake(160.0, 320.0) withDelay:0.0];
         
         // Once player token is in place, begin countdown
         [UIView animateWithDuration:0.3 delay:0.1 options:0 animations:^{
@@ -326,8 +327,7 @@
 }
 
 -(void)beginCountdown {
-    // Center info label and move to the foreground
-    self.infoLabel.textAlignment = UITextAlignmentCenter;
+    // Move info label to the foreground
     [self.view bringSubviewToFront:infoLabel];
     
     // Begin Countdown animation
