@@ -5588,7 +5588,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>460</integer>
+					<integer>400</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -5928,7 +5928,7 @@
 		<string>IDECollapsedTypes</string>
 		<string>IDERecentFilteringEnabled</string>
 		<string>IDECollapsedGroups</string>
-		<string>{{0, 0}, {259, 788}}</string>
+		<string>{{0, 0}, {259, 771}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7208,10 +7208,10 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>332301852.43734598</real>
-		<string>{5730, 1865}</string>
-		<string>{6248, 0}</string>
-		<string>-animateLabel</string>
+		<real>332303191.93325597</real>
+		<string>{4458, 1515}</string>
+		<string>{5242, 0}</string>
+		<string>-hideInfoLabelWithDelay:</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
 			<key>$class</key>
@@ -13857,9 +13857,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>332301852.43626702</real>
-		<string>{5730, 1865}</string>
-		<string>{6248, 0}</string>
+		<real>332303191.93052399</real>
+		<string>{4458, 1515}</string>
+		<string>{5242, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -20944,7 +20944,7 @@
 				<integer>1496</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>332301799.25513101</real>
+			<real>332303186.92987901</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -20955,7 +20955,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 10:03 PM</string>
+		<string>Today at 10:26 PM</string>
 		<integer>106</integer>
 		<string>Jankenpon</string>
 		<dict>
