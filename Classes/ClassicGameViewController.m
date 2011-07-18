@@ -20,10 +20,14 @@
 
 @synthesize nextRoundButton;
 @synthesize doneButton;
+@synthesize mainMenuButton;
 @synthesize weaponLabel;
 @synthesize infoLabel;
 @synthesize playerLabel;
 @synthesize computerLabel;
+@synthesize roundLabel;
+@synthesize statisticsView;
+@synthesize startDate;
 
 //----------------------------------------------------------------------------
 #pragma mark -
@@ -36,11 +40,19 @@
         
         if(gameType == GameTypeSinglePlayer) {
             gameViewTokens = [[NSMutableArray alloc] init];
-            opponentTokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(120, 90)];
+            computerTokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(120, 90)];
             [self initGame];
+            round = 1;
+            numRock = 0;
+            numPaper = 0;
+            numScissors = 0;
+            numComputerRock = 0;
+            numComputerPaper = 0;
+            numComputerScissors = 0;
+            self.startDate = [NSDate date];
         }else {
             gameViewTokens = [[NSMutableArray alloc] init];
-            opponentTokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(120, 90)];
+            computerTokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(120, 90)];
             [self initGame]; 
         }
     }
@@ -51,6 +63,7 @@
     countdown = 3;
     result = -1;
     tokenSelected = NO;
+    self.roundLabel.text = [NSString stringWithFormat:@"%d", round];
 }
 
 -(void)didReceiveMemoryWarning {
@@ -61,13 +74,15 @@
 -(void)dealloc {
     [nextRoundButton release];
     [doneButton release];
+    [mainMenuButton release];
     [weaponLabel release];
     [infoLabel release];
     [playerLabel release];
     [computerLabel release];
+    [roundLabel release];
     [gameViewTokens release];
-    [playerTokenView release];
-    [opponentTokenView release];
+    [computerTokenView release];
+    [statisticsView release];
     [super dealloc];
 }
 
@@ -81,8 +96,10 @@
     // Do any additional setup after loading the view from its nib.
     self.nextRoundButton.alpha = 0.0;
     self.doneButton.alpha = 0.0;
+    self.mainMenuButton.alpha = 0.0;
     self.weaponLabel.alpha = 1.0;
     self.infoLabel.alpha = 0.0;
+    self.statisticsView.alpha = 0.0;
 }
 
 -(void)viewDidUnload {
@@ -91,10 +108,13 @@
     // Release any retained subviews of the main view.
     self.nextRoundButton = nil;
     self.doneButton = nil;
+    self.mainMenuButton = nil;
     self.weaponLabel = nil;
     self.infoLabel = nil;
     self.playerLabel = nil;
     self.computerLabel = nil;
+    self.roundLabel = nil;
+    self.statisticsView = nil;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -115,12 +135,24 @@
         [tokenView release];
     }
     
-    // Select a random throw for the opponent
+    // Select a random throw for the computer
     Token token = arc4random() % 3;
-    opponentTokenView.token = token;
-    [opponentTokenView flipToken:0.0];
-    opponentTokenView.transform = CGAffineTransformMakeScale(0.01, 0.01);
-    [self.view addSubview:opponentTokenView];
+    computerTokenView.token = token;
+    [computerTokenView flipToken:0.0];
+    computerTokenView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+    [self.view addSubview:computerTokenView];
+
+    switch (token) {
+        case TokenRock:
+            numComputerRock++;
+            break;
+        case TokenPaper:
+            numComputerPaper++;
+            break;
+        case TokenScissors:
+            numComputerScissors++;
+            break;
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -129,7 +161,7 @@
     NSTimeInterval delay = 0.0;
     
     // Display tokens
-    opponentTokenView.transform = CGAffineTransformMakeScale(2.0, 2.0);
+    computerTokenView.transform = CGAffineTransformMakeScale(2.0, 2.0);
     
     for(GameTokenView *tokenView in gameViewTokens) {
         [tokenView resetTokenTransformation:delay];
@@ -177,29 +209,31 @@
     [UIView commitAnimations];
 }
 
--(void)hideInfoLabelWithDelay:(CGFloat)delay {    
+-(void)hideInfoLabelWithDelay:(CGFloat)delay andDuration:(CGFloat)duration {    
     // Once the Info Label is hidden, call the animateLabel function again with the countdown
     // integer decremented by 1. If the Info Label text is 'FIGHT!', compare the tokens
-    [UIView animateWithDuration:0.2 delay:delay options:0 animations:^{
+    [UIView animateWithDuration:duration delay:delay options:0 animations:^{
         self.infoLabel.alpha = 0.0;
     }completion:^(BOOL finished) {
-        if(![self.infoLabel.text isEqualToString:@"Fight!"]) {
+        if(countdown != 0) {
+            countdown--;
             [self animateLabel];
         }else {
             [self compareTokens];
         }
     }];
     
-    if([self.infoLabel.text isEqualToString:@"Fight!"]) {
+    if(countdown == 0) {
         // Flip over tokens
-        //[playerTokenView flipToken:0.0];
-        [opponentTokenView flipToken:0.0];
+        [computerTokenView flipToken:0.0];
     }
+
 }
 
 -(void)animateLabel {
     float labelScale;
     float animateDelay;
+    float animateDuration;
     
     // Replace the Info Label text with the countdown integer until it gets to 0,
     // Then replace it with 'FIGHT!'
@@ -221,12 +255,16 @@
         animateDelay = 0.8;
     }else if (countdown == 0) {
         self.infoLabel.text = @"Fight!";
-        labelScale = 1.0;
-        animateDelay = 0.8;
+        //labelScale = 1.0;
+        //animateDelay = 0.8;
+        labelScale = 1.2;
+        animateDelay = 0.3;
+        animateDuration = 0.5;
     }else {
-        self.infoLabel.text = [NSString stringWithFormat:@"%d", countdown--];
+        self.infoLabel.text = [NSString stringWithFormat:@"%d", countdown];
         labelScale = 2.5;
         animateDelay = 0.3;
+        animateDuration = 0.2;
     }
     
     // Strink the text
@@ -258,7 +296,7 @@
     // If the result has not been set yet, the countdown is still in progress. Hide the info
     // label and trigger the next number to be displayed
     if(result == -1) {
-        [self hideInfoLabelWithDelay:animateDelay];
+        [self hideInfoLabelWithDelay:animateDelay andDuration:animateDuration];
     }
 }
 
@@ -271,19 +309,22 @@
     [self hideButton:nextRoundButton withDelay:0.0];
     [self hideButton:doneButton withDelay:0.0];
     
-    opponentTokenView.flipped = YES;
-    [opponentTokenView flipToken:0.0];
+    computerTokenView.flipped = YES;
+    [computerTokenView flipToken:0.0];
     
     [UIView animateWithDuration:0.4 animations:^{
         playerTokenView.alpha = 0.0;
         playerTokenView.transform = CGAffineTransformMakeScale(0.01, 0.01);
     }];
     
-    [self.view bringSubviewToFront:infoLabel];
-    [self hideLabel:infoLabel withDelay:0.0];
+    //[self.view bringSubviewToFront:infoLabel];
+    //[self hideLabel:infoLabel withDelay:0.0];
+    infoLabel.alpha = 0.0;
     [self showLabel:weaponLabel withDelay:0.0];
 
     [gameViewTokens removeAllObjects];
+    
+    round++;
     
     [self initGame];
     [self viewWillAppear:YES];
@@ -291,6 +332,65 @@
 }
 
 -(void)doneButtonWasPressed:(id)sender {
+    // Display statistics
+    NSDate *endDate;
+    NSTimeInterval elapsedTime;
+    float percentPlayerRock;
+    float percentPlayerPaper;
+    float percentPlayerScissors;
+    float percentComputerRock;
+    float percentComputerPaper;
+    float percentComputerScissors;
+    float winPercentage;
+    float winRatio;
+    
+    endDate = [NSDate date];
+    elapsedTime = [endDate timeIntervalSinceDate:startDate];
+    
+    percentPlayerRock = ((float)numRock / (float)round) * 100.0;
+    percentPlayerPaper = ((float)numPaper / (float)round) * 100.0;
+    percentPlayerScissors = ((float)numScissors / (float)round) * 100.0;
+    percentComputerRock = ((float)numComputerRock / (float)round) * 100.0;
+    percentComputerPaper = ((float)numComputerPaper / (float)round) * 100.0;
+    percentComputerScissors = ((float)numComputerScissors / (float)round) * 100.0;
+    
+    if(playerScore == 0) {
+        winPercentage = 0;
+        winRatio = 0;
+    }else if(computerScore == 0) {
+        winPercentage = 100.0;
+        winRatio = 1;
+    }else {
+        winPercentage = ((float)playerScore / ((float)playerScore + (float)computerScore)) * 100.0;
+        winRatio = (float)playerScore / (float)computerScore;
+    }
+    
+    [(UILabel*)[statisticsView viewWithTag:1] setText:[NSString stringWithFormat:@"%d", round]];
+    [(UILabel*)[statisticsView viewWithTag:2] setText:[NSString stringWithFormat:@"%.2fsec", elapsedTime]];
+    [(UILabel*)[statisticsView viewWithTag:3] setText:[NSString stringWithFormat:@"%.0f%%", winPercentage]];
+    [(UILabel*)[statisticsView viewWithTag:4] setText:[NSString stringWithFormat:@"%.2f", winRatio]];
+    [(UILabel*)[statisticsView viewWithTag:5] setText:[NSString stringWithFormat:@"%d (%.0f%%)", numRock, percentPlayerRock]];
+    [(UILabel*)[statisticsView viewWithTag:6] setText:[NSString stringWithFormat:@"%d (%.0f%%)", numComputerRock, percentComputerRock]];
+    [(UILabel*)[statisticsView viewWithTag:7] setText:[NSString stringWithFormat:@"%d (%.0f%%)", numPaper, percentPlayerPaper]];
+    [(UILabel*)[statisticsView viewWithTag:8] setText:[NSString stringWithFormat:@"%d (%.0f%%)", numComputerPaper, percentComputerPaper]];
+    [(UILabel*)[statisticsView viewWithTag:9] setText:[NSString stringWithFormat:@"%d (%.0f%%)", numScissors, percentPlayerScissors]];
+    [(UILabel*)[statisticsView viewWithTag:10] setText:[NSString stringWithFormat:@"%d (%.0f%%)", numComputerScissors, percentComputerScissors]];
+    
+    [self hideButton:nextRoundButton withDelay:0.0];
+    [self hideButton:doneButton withDelay:0.0];
+    [self showButton:mainMenuButton withDelay:0.0];    
+    [self hideLabel:infoLabel withDelay:0.0];
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        playerTokenView.alpha = 0.0;
+        playerTokenView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+        computerTokenView.alpha = 0.0;
+        computerTokenView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+        statisticsView.alpha = 1.0;
+    }];
+}
+
+-(void)mainMenuButtonWasPressed:(id)sender {
     // Return to main view
 	[self dismissModalViewControllerAnimated:YES];	
 }
@@ -303,6 +403,18 @@
     if([sender isKindOfClass:[GameTokenView class]]) {
         // Get selected token
         playerTokenView = (GameTokenView*)sender;
+        
+        switch (playerTokenView.token) {
+            case (TokenRock):
+                numRock++;
+                break;
+            case (TokenPaper):
+                numPaper++;
+                break;
+            case (TokenScissors):
+                numScissors++;
+                break;
+        }
         
         // Hide non selected tokens and remove them from the array
         for(GameTokenView *tokenView in gameViewTokens) {
@@ -343,7 +455,7 @@
 
 -(void)compareTokens {    
     // Determine who wins
-    result = [playerTokenView compare:opponentTokenView];
+    result = [playerTokenView compare:computerTokenView];
     
     // Display results
     [self animateLabel];
