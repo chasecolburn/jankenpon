@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A907AB13E28125008F59DF /* GameStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A907AA13E28125008F59DF /* GameStatistics.m */; };
 		01CB7E7A13C12D950045F398 /* ClassicGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB7E7313C12D950045F398 /* ClassicGameViewController.m */; };
 		01CB7E7B13C12D950045F398 /* GameTokenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB7E7513C12D950045F398 /* GameTokenView.m */; };
 		01CB7E7C13C12D950045F398 /* NSMutableArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB7E7713C12D950045F398 /* NSMutableArray+Extensions.m */; };
@@ -34,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		01A7B5D613CC7E1B0084E55E /* jankenpon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jankenpon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01A907A913E2810E008F59DF /* GameStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStatistics.h; path = ../../../clayton/Documents/jankenpon/GameStatistics.h; sourceTree = "<group>"; };
+		01A907AA13E28125008F59DF /* GameStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameStatistics.m; path = ../../../clayton/Documents/jankenpon/GameStatistics.m; sourceTree = "<group>"; };
 		01CB7E7213C12D950045F398 /* ClassicGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassicGameViewController.h; path = Classes/ClassicGameViewController.h; sourceTree = "<group>"; };
 		01CB7E7313C12D950045F398 /* ClassicGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassicGameViewController.m; path = Classes/ClassicGameViewController.m; sourceTree = "<group>"; };
 		01CB7E7413C12D950045F398 /* GameTokenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameTokenView.h; path = Classes/GameTokenView.h; sourceTree = "<group>"; };
@@ -97,6 +100,15 @@
 			path = Resources/Images;
 			sourceTree = "<group>";
 		};
+		01D3914713E0D1470088818D /* Shared Classes */ = {
+			isa = PBXGroup;
+			children = (
+				01A907A913E2810E008F59DF /* GameStatistics.h */,
+				01A907AA13E28125008F59DF /* GameStatistics.m */,
+			);
+			name = "Shared Classes";
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Application Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +154,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				01D3914713E0D1470088818D /* Shared Classes */,
 				AB375C9713B8D81400CCC80F /* Extensions */,
 				289233A00DB2D0730083E9F9 /* Custom Views */,
 				281C6CD70DB2D82200F60ACC /* View Controllers */,
@@ -276,6 +289,7 @@
 				01CB7E7B13C12D950045F398 /* GameTokenView.m in Sources */,
 				01CB7E7C13C12D950045F398 /* NSMutableArray+Extensions.m in Sources */,
 				01CB7E7D13C12D950045F398 /* UltimateGameViewController.m in Sources */,
+				01A907AB13E28125008F59DF /* GameStatistics.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

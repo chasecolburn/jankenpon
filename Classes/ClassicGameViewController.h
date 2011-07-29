@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
 #import "GameTokenView.h"
+#import "GameStatistics.h"
 
 @interface ClassicGameViewController : UIViewController {
     UIButton *nextRoundButton;
@@ -25,17 +26,18 @@
     NSMutableArray *gameViewTokens;
     GameTokenView *playerTokenView;
     GameTokenView *computerTokenView;
-    NSDate *startDate;
+    GameStatistics *gameStatistics;
+//    NSDate *startDate;
     int countdown;
-    int playerScore;
-    int computerScore;
+//    int playerScore;
+//    int computerScore;
     int round;
-    int numRock;
-    int numPaper;
-    int numScissors;
-    int numComputerRock;
-    int numComputerPaper;
-    int numComputerScissors;
+//    int numRock;
+//    int numPaper;
+//    int numScissors;
+//    int numComputerRock;
+//    int numComputerPaper;
+//    int numComputerScissors;
     Result result;
     BOOL tokenSelected;
 }

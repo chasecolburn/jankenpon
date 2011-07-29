@@ -43,13 +43,9 @@
             computerTokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(120, 90)];
             [self initGame];
             round = 1;
-            numRock = 0;
-            numPaper = 0;
-            numScissors = 0;
-            numComputerRock = 0;
-            numComputerPaper = 0;
-            numComputerScissors = 0;
-            self.startDate = [NSDate date];
+            gameStatistics = [[GameStatistics alloc] init];
+            [gameStatistics initStats];
+            [gameStatistics setStartDate];
         }else {
             gameViewTokens = [[NSMutableArray alloc] init];
             computerTokenView = [[GameTokenView alloc] initWithOrigin:CGPointMake(120, 90)];
@@ -83,6 +79,7 @@
     [gameViewTokens release];
     [computerTokenView release];
     [statisticsView release];
+    
     [super dealloc];
 }
 
@@ -144,13 +141,13 @@
 
     switch (token) {
         case TokenRock:
-            numComputerRock++;
+            gameStatistics.p2NumRock++;
             break;
         case TokenPaper:
-            numComputerPaper++;
+            gameStatistics.p2NumPaper++;
             break;
         case TokenScissors:
-            numComputerScissors++;
+            gameStatistics.p2NumScissors++;
             break;
     }
 }
@@ -284,11 +281,11 @@
             [self showButton:doneButton withDelay:0.0];
             
             if(result == ResultWin) {
-                playerScore++;
-                self.playerLabel.text = [NSString stringWithFormat:@"%d", playerScore];
+                gameStatistics.p1Score++;
+                self.playerLabel.text = [NSString stringWithFormat:@"%d", gameStatistics.p1Score];
             }else if(result == ResultLose)  {
-                computerScore++;
-                self.computerLabel.text = [NSString stringWithFormat:@"%d", computerScore];
+                gameStatistics.p2Score++;
+                self.computerLabel.text = [NSString stringWithFormat:@"%d", gameStatistics.p2Score];
             }
         }
     }];
@@ -333,48 +330,19 @@
 
 -(void)doneButtonWasPressed:(id)sender {
     // Display statistics
-    NSDate *endDate;
-    NSTimeInterval elapsedTime;
-    float percentPlayerRock;
-    float percentPlayerPaper;
-    float percentPlayerScissors;
-    float percentComputerRock;
-    float percentComputerPaper;
-    float percentComputerScissors;
-    float winPercentage;
-    float winRatio;
-    
-    endDate = [NSDate date];
-    elapsedTime = [endDate timeIntervalSinceDate:startDate];
-    
-    percentPlayerRock = ((float)numRock / (float)round) * 100.0;
-    percentPlayerPaper = ((float)numPaper / (float)round) * 100.0;
-    percentPlayerScissors = ((float)numScissors / (float)round) * 100.0;
-    percentComputerRock = ((float)numComputerRock / (float)round) * 100.0;
-    percentComputerPaper = ((float)numComputerPaper / (float)round) * 100.0;
-    percentComputerScissors = ((float)numComputerScissors / (float)round) * 100.0;
-    
-    if(playerScore == 0) {
-        winPercentage = 0;
-        winRatio = 0;
-    }else if(computerScore == 0) {
-        winPercentage = 100.0;
-        winRatio = 1;
-    }else {
-        winPercentage = ((float)playerScore / ((float)playerScore + (float)computerScore)) * 100.0;
-        winRatio = (float)playerScore / (float)computerScore;
-    }
+    [gameStatistics setEndDate];
+    [gameStatistics calculateStatistics:round];
     
     [(UILabel*)[statisticsView viewWithTag:1] setText:[NSString stringWithFormat:@"%d", round]];
-    [(UILabel*)[statisticsView viewWithTag:2] setText:[NSString stringWithFormat:@"%.2fsec", elapsedTime]];
-    [(UILabel*)[statisticsView viewWithTag:3] setText:[NSString stringWithFormat:@"%.0f%%", winPercentage]];
-    [(UILabel*)[statisticsView viewWithTag:4] setText:[NSString stringWithFormat:@"%.2f", winRatio]];
-    [(UILabel*)[statisticsView viewWithTag:5] setText:[NSString stringWithFormat:@"%d (%.0f%%)", numRock, percentPlayerRock]];
-    [(UILabel*)[statisticsView viewWithTag:6] setText:[NSString stringWithFormat:@"%d (%.0f%%)", numComputerRock, percentComputerRock]];
-    [(UILabel*)[statisticsView viewWithTag:7] setText:[NSString stringWithFormat:@"%d (%.0f%%)", numPaper, percentPlayerPaper]];
-    [(UILabel*)[statisticsView viewWithTag:8] setText:[NSString stringWithFormat:@"%d (%.0f%%)", numComputerPaper, percentComputerPaper]];
-    [(UILabel*)[statisticsView viewWithTag:9] setText:[NSString stringWithFormat:@"%d (%.0f%%)", numScissors, percentPlayerScissors]];
-    [(UILabel*)[statisticsView viewWithTag:10] setText:[NSString stringWithFormat:@"%d (%.0f%%)", numComputerScissors, percentComputerScissors]];
+    [(UILabel*)[statisticsView viewWithTag:2] setText:[NSString stringWithFormat:@"%.2fsec", gameStatistics.elapsedTime]];
+    [(UILabel*)[statisticsView viewWithTag:3] setText:[NSString stringWithFormat:@"%.0f%%", gameStatistics.winPercentage]];
+    [(UILabel*)[statisticsView viewWithTag:4] setText:[NSString stringWithFormat:@"%.2f", gameStatistics.winRatio]];
+    [(UILabel*)[statisticsView viewWithTag:5] setText:[NSString stringWithFormat:@"%d (%.0f%%)", gameStatistics.p1NumRock, gameStatistics.p1PercentRock]];
+    [(UILabel*)[statisticsView viewWithTag:6] setText:[NSString stringWithFormat:@"%d (%.0f%%)", gameStatistics.p2NumRock, gameStatistics.p2PercentRock]];
+    [(UILabel*)[statisticsView viewWithTag:7] setText:[NSString stringWithFormat:@"%d (%.0f%%)", gameStatistics.p1NumPaper, gameStatistics.p1PercentPaper]];
+    [(UILabel*)[statisticsView viewWithTag:8] setText:[NSString stringWithFormat:@"%d (%.0f%%)", gameStatistics.p2NumPaper, gameStatistics.p2PercentPaper]];
+    [(UILabel*)[statisticsView viewWithTag:9] setText:[NSString stringWithFormat:@"%d (%.0f%%)", gameStatistics.p1NumScissors, gameStatistics.p1PercentScissors]];
+    [(UILabel*)[statisticsView viewWithTag:10] setText:[NSString stringWithFormat:@"%d (%.0f%%)", gameStatistics.p2NumScissors, gameStatistics.p2PercentScissors]];
     
     [self hideButton:nextRoundButton withDelay:0.0];
     [self hideButton:doneButton withDelay:0.0];
@@ -406,13 +374,13 @@
         
         switch (playerTokenView.token) {
             case (TokenRock):
-                numRock++;
+                gameStatistics.p1NumRock++;
                 break;
             case (TokenPaper):
-                numPaper++;
+                gameStatistics.p1NumPaper++;
                 break;
             case (TokenScissors):
-                numScissors++;
+                gameStatistics.p1NumScissors++;
                 break;
         }
         
